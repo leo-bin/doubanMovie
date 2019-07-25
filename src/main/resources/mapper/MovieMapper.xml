@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doubanmovie.dao.MovieDAO">
+
+    <insert id="insert">
+        INSERT INTO movies.movies(movie_id, directors, casts, cover, cover_x, cover_y, rate, star, title, url)
+        VALUES
+        (#{id},#{directors},#{casts},#{cover},#{coverX},#{coverY},#{rate},#{star},#{title},#{url})
+    </insert>
+
+    <select id="getAll" resultType="com.doubanmovie.pojo.MovieDO">
+        SELECT * FROM movies.movies
+    </select>
+</mapper>
